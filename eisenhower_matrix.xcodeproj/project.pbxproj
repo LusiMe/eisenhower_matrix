@@ -12,6 +12,9 @@
 		C64BA35B25B0922300F016E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C64BA35925B0922300F016E5 /* Main.storyboard */; };
 		C64BA35D25B0922A00F016E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C64BA35C25B0922A00F016E5 /* Assets.xcassets */; };
 		C64BA36025B0922A00F016E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C64BA35E25B0922A00F016E5 /* LaunchScreen.storyboard */; };
+		C64BA36825B18E4A00F016E5 /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64BA36725B18E4A00F016E5 /* ToDoTableViewCell.swift */; };
+		C64BA36A25B35F8A00F016E5 /* SortingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64BA36925B35F8A00F016E5 /* SortingViewController.swift */; };
+		C64BA36C25B35FCC00F016E5 /* SortingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64BA36B25B35FCC00F016E5 /* SortingTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		C64BA35C25B0922A00F016E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C64BA35F25B0922A00F016E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C64BA36125B0922A00F016E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C64BA36725B18E4A00F016E5 /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
+		C64BA36925B35F8A00F016E5 /* SortingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingViewController.swift; sourceTree = "<group>"; };
+		C64BA36B25B35FCC00F016E5 /* SortingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +63,9 @@
 				C64BA35525B0922300F016E5 /* AppDelegate.swift */,
 				C64BA35725B0922300F016E5 /* ViewController.swift */,
 				C64BA35925B0922300F016E5 /* Main.storyboard */,
+				C64BA36925B35F8A00F016E5 /* SortingViewController.swift */,
+				C64BA36725B18E4A00F016E5 /* ToDoTableViewCell.swift */,
+				C64BA36B25B35FCC00F016E5 /* SortingTableViewCell.swift */,
 				C64BA35C25B0922A00F016E5 /* Assets.xcassets */,
 				C64BA35E25B0922A00F016E5 /* LaunchScreen.storyboard */,
 				C64BA36125B0922A00F016E5 /* Info.plist */,
@@ -135,8 +144,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C64BA36825B18E4A00F016E5 /* ToDoTableViewCell.swift in Sources */,
 				C64BA35825B0922300F016E5 /* ViewController.swift in Sources */,
 				C64BA35625B0922300F016E5 /* AppDelegate.swift in Sources */,
+				C64BA36A25B35F8A00F016E5 /* SortingViewController.swift in Sources */,
+				C64BA36C25B35FCC00F016E5 /* SortingTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
