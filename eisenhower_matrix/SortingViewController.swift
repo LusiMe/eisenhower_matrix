@@ -31,7 +31,13 @@ class SortingViewController: UIViewController, UITableViewDataSource, UITableVie
         }
         return cell
     }
-    
-    
 
 }
+//extension SortingViewController: UICollectionViewDragDelegate {
+//    func collectionView(_ collectionView: UICollectionView,
+//                        itemsForBeginning session: UIDragSession,
+//                        at indexPath: IndexPath) -> [UIDragItem] {
+//        let dataSource = dataSourceForCollectionView(collectionView)
+//        return dataSource.dragItems(for: indexPath)
+//}
+//}

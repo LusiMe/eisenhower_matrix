@@ -8,11 +8,9 @@
 import Foundation
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
    
     var todo = [String]()
-    
-    
     
     @IBOutlet weak var errorLabel: UILabel!
     
@@ -35,14 +33,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        todo = UserDefaults.standard.object(forKey: "todoList") as! [String]
         
-        if self.textField.isEditing { //not working
-            errorLabel.isHidden = true
+        textField.delegate = self
+        
+        if UserDefaults.standard.object(forKey: "todoList") != nil {
+        todo = UserDefaults.standard.object(forKey: "todoList") as! [String]
+        } else {
+            todo = [""]
         }
-        //TODO: find the way to hide errorLable if textField is editing
     }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == self.textField {
+                errorLabel.isHidden = true
+        }
+        }
     
     private func saveData(todo: [String]) {
         UserDefaults.standard.set(todo, forKey: "todoList")
@@ -58,8 +63,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell.taskName.text = todo[indexPath.row]
         }
         saveData(todo: todo)
-     
-        
         return cell
     }
     
