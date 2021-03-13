@@ -14,15 +14,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var errorLabel: UILabel!
     
-    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var taskInput: UITextField!
     
     @IBOutlet weak var tableView: UITableView!
     
     @IBAction func addTask(_ sender: UIButton) {
         errorLabel.isHidden = true
-        if textField.text != "" {
-            todo.append(textField.text!)
-            textField.text = ""
+        if taskInput.text != "" {
+            todo.append(taskInput.text!)
+            taskInput.text = ""
             self.tableView.reloadData()
         } else {
             errorLabel.text = "please, type the task name"
@@ -34,7 +34,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        textField.delegate = self
+        taskInput.delegate = self
         
         if UserDefaults.standard.object(forKey: "todoList") != nil {
         todo = UserDefaults.standard.object(forKey: "todoList") as! [String]
@@ -42,9 +42,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             todo = [""]
         }
     }
-    
+    //why not working
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        if textField == self.textField {
+        if textField == self.taskInput {
                 errorLabel.isHidden = true
         }
         }

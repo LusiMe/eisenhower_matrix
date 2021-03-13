@@ -15,6 +15,7 @@
 		C64BA36825B18E4A00F016E5 /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64BA36725B18E4A00F016E5 /* ToDoTableViewCell.swift */; };
 		C64BA36A25B35F8A00F016E5 /* SortingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64BA36925B35F8A00F016E5 /* SortingViewController.swift */; };
 		C64BA36C25B35FCC00F016E5 /* SortingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64BA36B25B35FCC00F016E5 /* SortingTableViewCell.swift */; };
+		C6932AB525FD3CE60079A32C /* D&Dmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6932AB425FD3CE60079A32C /* D&Dmodel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		C64BA36725B18E4A00F016E5 /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
 		C64BA36925B35F8A00F016E5 /* SortingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingViewController.swift; sourceTree = "<group>"; };
 		C64BA36B25B35FCC00F016E5 /* SortingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingTableViewCell.swift; sourceTree = "<group>"; };
+		C6932AB425FD3CE60079A32C /* D&Dmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "D&Dmodel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				C64BA35725B0922300F016E5 /* ViewController.swift */,
 				C64BA35925B0922300F016E5 /* Main.storyboard */,
 				C64BA36925B35F8A00F016E5 /* SortingViewController.swift */,
+				C6932AB425FD3CE60079A32C /* D&Dmodel.swift */,
 				C64BA36725B18E4A00F016E5 /* ToDoTableViewCell.swift */,
 				C64BA36B25B35FCC00F016E5 /* SortingTableViewCell.swift */,
 				C64BA35C25B0922A00F016E5 /* Assets.xcassets */,
@@ -146,6 +149,7 @@
 			files = (
 				C64BA36825B18E4A00F016E5 /* ToDoTableViewCell.swift in Sources */,
 				C64BA35825B0922300F016E5 /* ViewController.swift in Sources */,
+				C6932AB525FD3CE60079A32C /* D&Dmodel.swift in Sources */,
 				C64BA35625B0922300F016E5 /* AppDelegate.swift in Sources */,
 				C64BA36A25B35F8A00F016E5 /* SortingViewController.swift in Sources */,
 				C64BA36C25B35FCC00F016E5 /* SortingTableViewCell.swift in Sources */,
