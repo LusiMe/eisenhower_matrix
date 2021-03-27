@@ -131,13 +131,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="lJi-f4-kds">
-                                <rect key="frame" x="0.0" y="143" width="414" height="249"/>
+                                <rect key="frame" x="0.0" y="187" width="414" height="205"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="xQj-Me-DzX">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="120.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="98.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xPo-7l-3rs">
-                                                <rect key="frame" x="0.0" y="0.0" width="203" height="120.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="203" height="98.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do First" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QKe-gj-Cxh">
                                                         <rect key="frame" x="81" y="50" width="59" height="20.5"/>
@@ -155,7 +155,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NEV-75-mi5">
-                                                <rect key="frame" x="211" y="0.0" width="203" height="120.5"/>
+                                                <rect key="frame" x="211" y="0.0" width="203" height="98.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Schedule" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QeV-aI-1gP">
                                                         <rect key="frame" x="81" y="50" width="71" height="20.5"/>
@@ -175,10 +175,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="m6T-FS-yVm">
-                                        <rect key="frame" x="0.0" y="128.5" width="414" height="120.5"/>
+                                        <rect key="frame" x="0.0" y="106.5" width="414" height="98.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PAb-vO-7jt">
-                                                <rect key="frame" x="0.0" y="0.0" width="203" height="120.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="203" height="98.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delegate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PsJ-aW-I6G">
                                                         <rect key="frame" x="80.5" y="49" width="68.5" height="20.5"/>
@@ -196,7 +196,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ACc-85-sey">
-                                                <rect key="frame" x="211" y="0.0" width="203" height="120.5"/>
+                                                <rect key="frame" x="211" y="0.0" width="203" height="98.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avoid" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8NW-kh-3CV">
                                                         <rect key="frame" x="80" y="49" width="43" height="20.5"/>
@@ -268,6 +268,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="70F-BC-UFV"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="firstView" destination="xPo-7l-3rs" id="PnJ-WM-jjY"/>
@@ -275,6 +276,24 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6pY-bM-XEj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2726.0869565217395" y="139.95535714285714"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DDh-tI-gGM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="a8B-XV-PGi" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mNM-dd-8Em">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="yZ8-1r-4Hi" kind="relationship" relationship="rootViewController" id="Uet-9x-N7U"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XXg-Jq-iCC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1815.9420289855075" y="139.95535714285714"/>
         </scene>

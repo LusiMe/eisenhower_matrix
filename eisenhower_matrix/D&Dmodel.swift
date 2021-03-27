@@ -2,8 +2,8 @@
 //  D&Dmodel.swift
 //  eisenhower_matrix
 //
-//  Created by Mark Parfenov on 13/03/2021.
-//  Copyright © 2021 Mark Parfenov. All rights reserved.
+//  Created by Luda Parfenova on 13/03/2021.
+//  Copyright © 2021 Luda Parfenova. All rights reserved.
 //
 import UIKit
 import MobileCoreServices
@@ -17,6 +17,22 @@ func canHandle(_ session: UIDropSession) -> Bool {
     /// The method for adding a new item to the table view's data model.
     mutating func addItem(_ place: String, at index: Int) {
         tasks.insert(place, at: index)
+    }
+    
+    func dragItems(for indexPath: IndexPath) -> [UIDragItem] {
+        let task = tasks[indexPath.row]
+
+        let data = task.data(using: .utf8)
+        let itemProvider = NSItemProvider()
+        
+        itemProvider.registerDataRepresentation(forTypeIdentifier: kUTTypePlainText as String, visibility: .all) { completion in
+            completion(data, nil)
+            return nil
+        }
+
+        return [
+            UIDragItem(itemProvider: itemProvider)
+        ]
     }
     
 }

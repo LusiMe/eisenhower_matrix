@@ -2,14 +2,14 @@
 //  SortingViewController.swift
 //  eisenhower_matrix
 //
-//  Created by Mark Parfenov on 16/01/2021.
-//  Copyright © 2021 Mark Parfenov. All rights reserved.
+//  Created by Luda Parfenova on 16/01/2021.
+//  Copyright © 2021 Luda Parfenova. All rights reserved.
 //
 
 import UIKit
 import MobileCoreServices
 
-class SortingViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIDragInteractionDelegate, UITableViewDragDelegate, UIDropInteractionDelegate {
+class SortingViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITableViewDragDelegate, UITableViewDropDelegate {
     
     var model = Model()
     
@@ -22,16 +22,11 @@ class SortingViewController: UIViewController, UITableViewDataSource, UITableVie
         super.viewDidLoad()
         
         tasks = UserDefaults.standard.object(forKey: "todoList") as! [String]
-        
-        firstView.isUserInteractionEnabled = true
-        tableView.dragInteractionEnabled = true
+
+        tableView.dragInteractionEnabled = true //intra apps
         tableView.dragDelegate = self
-//        tableView.dropDelegate = self
-        
-        let dragInteraction = UIDragInteraction(delegate: self)
-        tableView.addInteraction(dragInteraction)
-        let dropInteraction = UIDropInteraction(delegate: self)
-        firstView.addInteraction(dropInteraction)
+        tableView.dropDelegate = self
+    
         navigationItem.rightBarButtonItem = editButtonItem
         
     }
@@ -47,23 +42,9 @@ class SortingViewController: UIViewController, UITableViewDataSource, UITableVie
         }
         return cell
     }
-    func dragInteraction(_ interaction: UIDragInteraction, itemsForBeginning session: UIDragSession) -> [UIDragItem] {
-        return []
-    }
     
     func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
-        let task = tasks[indexPath.row]
-        let data = task.data(using: .utf8)
-        let itemProvider = NSItemProvider()
-        
-        itemProvider.registerDataRepresentation(forTypeIdentifier: kUTTypePlainText as String, visibility: .all) { completion in
-            completion(data, nil)
-            return nil
-        }
-        
-        return [
-            UIDragItem(itemProvider: itemProvider)
-        ]
+        return model.dragItems(for: indexPath)
     }
     func tableView(_ tableView: UITableView, canHandle session: UIDropSession) -> Bool {
         return model.canHandle(session)
@@ -74,12 +55,10 @@ class SortingViewController: UIViewController, UITableViewDataSource, UITableVie
         
         // Accept only one drag item.
         guard session.items.count == 1 else { return dropProposal }
-        
-        // The .move drag operation is available only for dragging within this app and while in edit mode.
+
         if tableView.hasActiveDrag {
-            if tableView.isEditing {
                 dropProposal = UITableViewDropProposal(operation: .move, intent: .insertAtDestinationIndexPath)
-            }
+        
         } else {
             // Drag is coming from outside the app.
             dropProposal = UITableViewDropProposal(operation: .copy, intent: .insertAtDestinationIndexPath)
@@ -112,6 +91,15 @@ class SortingViewController: UIViewController, UITableViewDataSource, UITableVie
 
             tableView.insertRows(at: indexPaths, with: .automatic)
         }
+    }
+    
+    
+    func tableView(_ tableView: UITableView, dragSessionWillBegin session: UIDragSession) {
+        navigationItem.rightBarButtonItem?.isEnabled = false
+    }
+    
+    func tableView(_ tableView: UITableView, dragSessionDidEnd session: UIDragSession) {
+        navigationItem.rightBarButtonItem?.isEnabled = true
     }
     
 }
