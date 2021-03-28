@@ -58,12 +58,10 @@ class SortingViewController: UIViewController, UITableViewDataSource, UITableVie
 
         if tableView.hasActiveDrag {
                 dropProposal = UITableViewDropProposal(operation: .move, intent: .insertAtDestinationIndexPath)
-        
         } else {
             // Drag is coming from outside the app.
             dropProposal = UITableViewDropProposal(operation: .copy, intent: .insertAtDestinationIndexPath)
         }
-
         return dropProposal
     }
     func tableView(_ tableView: UITableView, performDropWith coordinator: UITableViewDropCoordinator) {
@@ -81,18 +79,26 @@ class SortingViewController: UIViewController, UITableViewDataSource, UITableVie
         coordinator.session.loadObjects(ofClass: NSString.self) { items in
             // Consume drag items.
             let stringItems = items as! [String]
-            
+
             var indexPaths = [IndexPath]()
             for (index, item) in stringItems.enumerated() {
                 let indexPath = IndexPath(row: destinationIndexPath.row + index, section: destinationIndexPath.section)
-                self.model.addItem(item, at: indexPath.row)
-                indexPaths.append(indexPath)
+                //suppose to be .move not .add
+//                self.model.addItem(item, at: indexPath.row)
+//                indexPaths.append(indexPath)
+                
             }
 
             tableView.insertRows(at: indexPaths, with: .automatic)
         }
     }
     
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+       model.moveItem(at: sourceIndexPath.row, to: destinationIndexPath.row)
+   }
     
     func tableView(_ tableView: UITableView, dragSessionWillBegin session: UIDragSession) {
         navigationItem.rightBarButtonItem?.isEnabled = false
@@ -103,11 +109,3 @@ class SortingViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
 }
-//extension SortingViewController: UICollectionViewDragDelegate {
-//    func collectionView(_ collectionView: UICollectionView,
-//                        itemsForBeginning session: UIDragSession,
-//                        at indexPath: IndexPath) -> [UIDragItem] {
-//        let dataSource = dataSourceForCollectionView(collectionView)
-//        return dataSource.dragItems(for: indexPath)
-//}
-//}
