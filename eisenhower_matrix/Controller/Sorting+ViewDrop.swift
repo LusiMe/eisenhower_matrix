@@ -2,8 +2,8 @@
 //  Sorting+ViewDrop.swift
 //  eisenhower_matrix
 //
-//  Created by Mark Parfenov on 28/03/2021.
-//  Copyright © 2021 Mark Parfenov. All rights reserved.
+//  Created by Luda Parfenova on 28/03/2021.
+//  Copyright © 2021 Luda Parfenova. All rights reserved.
 //
 
 import UIKit
@@ -24,10 +24,10 @@ extension SortingViewController: UIDragInteractionDelegate, UIDropInteractionDel
            return [item]
     }
     
-    func dropInteraction(_ interaction: UIDropInteraction, canHandle session: UIDropSession) -> Bool {
-        return // i don't need image - think about it
-            session.hasItemsConforming(toTypeIdentifiers: [kUTTypeImage as String]) && session.items.count == 1
-    }
+//    func dropInteraction(_ interaction: UIDropInteraction, canHandle session: UIDropSession) -> Bool {
+//        return // i don't need image - think about it
+//            session.hasItemsConforming(toTypeIdentifiers: [kUTTypeImage as String]) && session.items.count == 1
+//    }
     
     
 }

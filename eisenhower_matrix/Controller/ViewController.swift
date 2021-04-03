@@ -5,10 +5,9 @@
 //  Created by Luda Parfenova on 14/01/2021.
 //  Copyright © 2021 Luda Parfenova. All rights reserved.
 //
-import Foundation
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
+class ViewController: UIViewController, UITableViewDelegate,  UITextFieldDelegate {
    
     var todo = [String]()
     
@@ -29,18 +28,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             errorLabel.isHidden = false
         }
     }
-    
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
         taskInput.delegate = self
+        todo = Helper.sharedInstance.setToDoList()
+       
+        //hide keyboard on tap
+    let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+    view.addGestureRecognizer(tapGesture)
         
-        if UserDefaults.standard.object(forKey: "todoList") != nil {
-        todo = UserDefaults.standard.object(forKey: "todoList") as! [String]
-        } else {
-            todo = [""]
-        }
     }
     //why not working
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -49,24 +47,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         }
     
-    private func saveData(todo: [String]) {
+    public func saveData(todo: [String]) {
         UserDefaults.standard.set(todo, forKey: "todoList")
     }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return todo.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "task", for: indexPath) as! ToDoTableViewCell
-        if todo.count > 0 {
-            cell.taskName.text = todo[indexPath.row]
-        }
-        saveData(todo: todo)
-        return cell
-    }
-    
-    
+
     @IBAction func nextPage(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "matrix")
