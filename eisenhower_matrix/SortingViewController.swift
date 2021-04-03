@@ -26,6 +26,14 @@ class SortingViewController: UIViewController, UITableViewDataSource, UITableVie
         tableView.dragInteractionEnabled = true //intra apps
         tableView.dragDelegate = self
         tableView.dropDelegate = self
+        
+        let dragInteraction = UIDragInteraction(delegate: self)
+        firstView.addInteraction(dragInteraction)
+        
+        let dropInteraction = UIDropInteraction(delegate: self)
+        firstView.addInteraction(dropInteraction)
+        
+        firstView.isUserInteractionEnabled = true
     
         navigationItem.rightBarButtonItem = editButtonItem
         
@@ -83,12 +91,9 @@ class SortingViewController: UIViewController, UITableViewDataSource, UITableVie
             var indexPaths = [IndexPath]()
             for (index, item) in stringItems.enumerated() {
                 let indexPath = IndexPath(row: destinationIndexPath.row + index, section: destinationIndexPath.section)
-                //suppose to be .move not .add
-//                self.model.addItem(item, at: indexPath.row)
-//                indexPaths.append(indexPath)
-                
+                self.model.addItem(item, at: indexPath.row)
+                indexPaths.append(indexPath)
             }
-
             tableView.insertRows(at: indexPaths, with: .automatic)
         }
     }

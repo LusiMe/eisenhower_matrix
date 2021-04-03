@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C634E0B72610A3A100EFD3DB /* Sorting+ViewDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = C634E0B62610A3A100EFD3DB /* Sorting+ViewDrop.swift */; };
 		C64BA35625B0922300F016E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64BA35525B0922300F016E5 /* AppDelegate.swift */; };
 		C64BA35825B0922300F016E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64BA35725B0922300F016E5 /* ViewController.swift */; };
 		C64BA35B25B0922300F016E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C64BA35925B0922300F016E5 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C634E0B62610A3A100EFD3DB /* Sorting+ViewDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sorting+ViewDrop.swift"; sourceTree = "<group>"; };
 		C64BA35225B0922300F016E5 /* eisenhower_matrix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eisenhower_matrix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C64BA35525B0922300F016E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C64BA35725B0922300F016E5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				C64BA35725B0922300F016E5 /* ViewController.swift */,
 				C64BA35925B0922300F016E5 /* Main.storyboard */,
 				C64BA36925B35F8A00F016E5 /* SortingViewController.swift */,
+				C634E0B62610A3A100EFD3DB /* Sorting+ViewDrop.swift */,
 				C6932AB425FD3CE60079A32C /* D&Dmodel.swift */,
 				C64BA36725B18E4A00F016E5 /* ToDoTableViewCell.swift */,
 				C64BA36B25B35FCC00F016E5 /* SortingTableViewCell.swift */,
@@ -147,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C634E0B72610A3A100EFD3DB /* Sorting+ViewDrop.swift in Sources */,
 				C64BA36825B18E4A00F016E5 /* ToDoTableViewCell.swift in Sources */,
 				C64BA35825B0922300F016E5 /* ViewController.swift in Sources */,
 				C6932AB525FD3CE60079A32C /* D&Dmodel.swift in Sources */,

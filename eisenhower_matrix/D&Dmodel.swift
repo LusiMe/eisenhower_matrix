@@ -14,7 +14,7 @@ struct Model {
 func canHandle(_ session: UIDropSession) -> Bool {
     return session.canLoadObjects(ofClass: NSString.self)
 }
-    /// The method for adding a new item to the table view's data model.
+   
     mutating func moveItem(at sourceIndex: Int, to destinationIndex: Int) {
         guard sourceIndex != destinationIndex else { return }
         
